@@ -2,12 +2,14 @@
 #include <iostream>
 #include "render/render.h"
 #include "cheat/esp/esp.h"
-#include <Windows.h>
 #include "auth.hpp"
 #include <string>
 #include "utils.hpp"
 #include "skStr.h"
 #include "render/ImGui/imgui.h"
+#include <mmsystem.h>
+#pragma comment(lib, "Winmm.lib") // link to winmm.lib library
+
 
 
 
@@ -29,11 +31,16 @@ std::string secret = "c50ead0c51f8d7ceff12fed7ca2837d0f5b2fbb566d12ab8207d1cf1ca
 std::string version = "1.0"; // leave alone unless you've changed version on website; // leave alone unless you've changed version on website
 std::string url = skCrypt("https://keyauth.win/api/1.2/").decrypt(); // change if you're self-hosting
 
-
 api KeyAuthApp(name, ownerid, secret, version, url);
+
+
 
 int main()
 {
+	
+	
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, 0x0D);
 	std::string consoleTitle = ("Quantom");
 	std::cout << skCrypt("\n\n Connecting..");
 	KeyAuthApp.init();
@@ -95,9 +102,13 @@ int main()
 
 	//cheat starts
 	system("CLS");
-	std::this_thread::sleep_for(std::chrono::seconds(2));
+	std::this_thread::sleep_for(std::chrono::seconds(1)); 	std::cout << ("");
+
+
+
 	std::cout << ("                                             ->Quantom Injected<-");
 	std::this_thread::sleep_for(std::chrono::seconds(2));
+	FreeConsole();
 	driver::find_driver();
 	ProcId = driver::find_process((L"FortniteClient-Win64-Shipping.exe"));
 	BaseId = driver::find_image();

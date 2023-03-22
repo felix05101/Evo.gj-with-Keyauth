@@ -281,203 +281,8 @@ WPARAM Render::MainLoop()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 bool bMenu = true;
-//secret menu down here xD
+
 void Render::Menu() {
 	static int MenuTab = 0;
 	float
@@ -501,34 +306,32 @@ void Render::Menu() {
 
 		ImGui::SetNextWindowSize({ 620.f,350.f });
 
-		ImGui::Begin("been ud for 6 months", 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar);
+		ImGui::Begin("Quantom-Pro", 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar);
 		ImGui::SetCursorPos({ 36.f,31.f });
-		ImGui::Text("Evotoogood");
 		ImGui::SetCursorPos({ 22.f,56.f });
 		if (ImGui::Button("Aimbot", { 89.f, 32.f }))
 		{
 			MenuTab = 0;
 		}
 		ImGui::SetCursorPos({ 22.f,93.f });
-		if (ImGui::Button("Visuals", { 89.f, 32.f }))
+		if (ImGui::Button("Esp", { 89.f, 32.f }))
 		{
 			MenuTab = 1;
 		}
 		ImGui::SetCursorPos({ 22.f,130.f });
-		if (ImGui::Button("MISC", { 89.f, 32.f }))
+		if (ImGui::Button("Misc", { 89.f, 32.f }))
 		{
 			MenuTab = 2;
 		}
+
+		ImGui::SetCursorPos({ 22.f,325.f });
+		ImGui::Text("Quantom-Pro");
+
+
 		ImGui::SetCursorPos({ 22.f,204.f });
-		if (ImGui::Button("Discord", { 89.f, 32.f }))
-		{
-			system("start https://discord.gg/8jTAstg4GK");
-		}
+
 		ImGui::SetCursorPos({ 22.f,291.f });
-		if (ImGui::Button("unload", { 65.f, 20.f }))
-		{
-			exit(0);
-		}
+
 
 		style->ItemSpacing = ImVec2(8, 8);
 
@@ -537,10 +340,18 @@ void Render::Menu() {
 			ImGui::SetCursorPos({ 137.f,39.f });
 			ImGui::BeginChild("##Aimbot", { 450.f,279.f }, true);
 			ImGui::SetCursorPos({ 19.f,14.f });
-			ImGui::Text("Evo-Aim:");
 			ImGui::Checkbox("Aimbot", &bAimbot);
+			// Hitbox selection box
+			ImGui::Text("Select Bone:");
+			ImGui::Combo("##HitboxCombo", &SelectedHitbox, HitboxList, IM_ARRAYSIZE(HitboxList));
+
+			// Mouse key selection box
+			ImGui::Text("Select Aimkey:");
+			ImGui::Combo("##MouseCombo", &KeySelected, MouseKeys, IM_ARRAYSIZE(MouseKeys));
+
 			ImGui::SliderFloat("Smooth", &Smooth, 2, 15);
 			ImGui::SliderInt("Fov Size", &FovSize, 50, 600);
+
 			
 			
 		}
@@ -549,8 +360,9 @@ void Render::Menu() {
 			ImGui::SetCursorPos({ 137.f,39.f });
 			ImGui::BeginChild("##Visuals", { 450.f,279.f }, true);
 			ImGui::SetCursorPos({ 19.f,14.f });
-			ImGui::Text("Evo-Enemy:");
+			ImGui::Checkbox("Box", &bBox);
 			ImGui::Checkbox("Corner Box", &bCornerBox);
+			ImGui::Checkbox("Snaplines", &bSnaplines);
 			
 			
 			
@@ -560,7 +372,8 @@ void Render::Menu() {
 			ImGui::SetCursorPos({ 137.f,39.f });
 			ImGui::BeginChild("##Misc", { 450.f,279.f }, true);
 			ImGui::SetCursorPos({ 19.f,14.f });
-			ImGui::Text("Evo-Gay:");
+			ImGui::Checkbox("Crosshair", &bCrosshair);
+
 		}
 		ImGui::EndChild();
 		ImGui::End();

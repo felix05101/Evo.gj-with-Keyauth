@@ -6,7 +6,11 @@ class Esp {
 public:
 	static void ActorLoop();
 };
-inline bool bCornerBox = true;
+inline bool bCornerBox = false;
+inline bool bBox = false;
+inline bool bSnaplines = false;
+inline bool bCrosshair = false;
+
 
 namespace Debug {
 	static bool PrintPointers = false;

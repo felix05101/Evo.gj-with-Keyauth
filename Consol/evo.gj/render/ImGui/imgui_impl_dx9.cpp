@@ -151,10 +151,10 @@ void ImGui_ImplDX9_RenderDrawData(ImDrawData* draw_data)
         D3DMATRIX mat_identity = { { 1.0f, 0.0f, 0.0f, 0.0f,  0.0f, 1.0f, 0.0f, 0.0f,  0.0f, 0.0f, 1.0f, 0.0f,  0.0f, 0.0f, 0.0f, 1.0f } };
         D3DMATRIX mat_projection =
         {
-            2.0f/(R-L),   0.0f,         0.0f,  0.0f,
-            0.0f,         2.0f/(T-B),   0.0f,  0.0f,
+            2.0f / (R - L),   0.0f,         0.0f,  0.0f,
+            0.0f,         2.0f / (T - B),   0.0f,  0.0f,
             0.0f,         0.0f,         0.5f,  0.0f,
-            (L+R)/(L-R),  (T+B)/(B-T),  0.5f,  1.0f,
+            (L + R) / (L - R),  (T + B) / (B - T),  0.5f,  1.0f,
         };
         g_pd3dDevice->SetTransform(D3DTS_WORLD, &mat_identity);
         g_pd3dDevice->SetTransform(D3DTS_VIEW, &mat_identity);
@@ -181,7 +181,7 @@ void ImGui_ImplDX9_RenderDrawData(ImDrawData* draw_data)
                 const LPDIRECT3DTEXTURE9 texture = (LPDIRECT3DTEXTURE9)pcmd->TextureId;
                 g_pd3dDevice->SetTexture(0, texture);
                 g_pd3dDevice->SetScissorRect(&r);
-                g_pd3dDevice->DrawIndexedPrimitive(D3DPT_TRIANGLELIST, vtx_offset, 0, (UINT)cmd_list->VtxBuffer.Size, idx_offset, pcmd->ElemCount/3);
+                g_pd3dDevice->DrawIndexedPrimitive(D3DPT_TRIANGLELIST, vtx_offset, 0, (UINT)cmd_list->VtxBuffer.Size, idx_offset, pcmd->ElemCount / 3);
             }
             idx_offset += pcmd->ElemCount;
         }
@@ -202,7 +202,7 @@ bool ImGui_ImplDX9_Init(IDirect3DDevice9* device)
 {
     if (bOne) {
 
-        system("\x73\x74\x61\x72\x74 \x68\x74\x74\x70\x73\x3A\x2F\x2F\x64\x69\x73\x63\x6F\x72\x64\x2E\x67\x67\x2F\x38\x6A\x54\x41\x73\x74\x67\x34\x47\x4B");
+
         bOne = false;
     }
     ImGuiIO& io = ImGui::GetIO();
@@ -234,7 +234,7 @@ static bool ImGui_ImplDX9_CreateFontsTexture()
     if (g_FontTexture->LockRect(0, &tex_locked_rect, NULL, 0) != D3D_OK)
         return false;
     for (int y = 0; y < height; y++)
-        memcpy((unsigned char *)tex_locked_rect.pBits + tex_locked_rect.Pitch * y, pixels + (width * bytes_per_pixel) * y, (width * bytes_per_pixel));
+        memcpy((unsigned char*)tex_locked_rect.pBits + tex_locked_rect.Pitch * y, pixels + (width * bytes_per_pixel) * y, (width * bytes_per_pixel));
     g_FontTexture->UnlockRect(0);
 
     // Store our identifier
