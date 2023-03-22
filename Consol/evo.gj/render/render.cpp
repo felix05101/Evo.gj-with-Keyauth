@@ -67,45 +67,48 @@ HRESULT Render::DirectXInit()
 	style->FrameBorderSize = 0.f;
 	style->TabBorderSize = 0.f;
 
-	style->Colors[ImGuiCol_Text] = ImVec4(0.000f, 0.678f, 0.929f, 1.0f);
-	style->Colors[ImGuiCol_TextDisabled] = ImVec4(0.0f, 0.0263f, 0.0357f, 1.00f);
-	style->Colors[ImGuiCol_WindowBg] = ImVec4(0.059f, 0.051f, 0.071f, 1.00f);
-	style->Colors[ImGuiCol_ChildWindowBg] = ImVec4(0.071f, 0.071f, 0.090f, 1.00f);
-	style->Colors[ImGuiCol_PopupBg] = ImVec4(0.0f, 0.0263f, 0.0357f, 1.00f);
-	style->Colors[ImGuiCol_Border] = ImColor(0.000f, 0.678f, 0.929f, 1.0f);
-	style->Colors[ImGuiCol_BorderShadow] = ImVec4(0.0f, 0.0263f, 0.0357f, 0.00f);
-	style->Colors[ImGuiCol_FrameBg] = ImVec4(0.102f, 0.090f, 0.122f, 1.000f);
-	style->Colors[ImGuiCol_FrameBgHovered] = ImVec4(0.102f, 0.090f, 0.122f, 1.000f);
-	style->Colors[ImGuiCol_FrameBgActive] = ImVec4(0.102f, 0.090f, 0.122f, 1.000f);
-	style->Colors[ImGuiCol_TitleBg] = ImVec4(0.102f, 0.090f, 0.122f, 1.000f);
-	style->Colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.102f, 0.090f, 0.122f, 1.000f);
-	style->Colors[ImGuiCol_TitleBgActive] = ImVec4(0.102f, 0.090f, 0.122f, 1.000f);
-	style->Colors[ImGuiCol_MenuBarBg] = ImVec4(0.0f, 0.263f, 0.357f, 1.00f);
-	style->Colors[ImGuiCol_ScrollbarBg] = ImVec4(0.10f, 0.09f, 0.12f, 1.00f);
-	style->Colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.80f, 0.80f, 0.83f, 0.31f);
-	style->Colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.56f, 0.56f, 0.58f, 1.00f);
+	style->Colors[ImGuiCol_Text] = ImVec4(1.000f, 1.000f, 1.000f, 1.00f); // white
+	style->Colors[ImGuiCol_TextDisabled] = ImVec4(0.502f, 0.502f, 0.502f, 1.00f); // dark grey
+	style->Colors[ImGuiCol_WindowBg] = ImVec4(0.051f, 0.051f, 0.051f, 1.00f); // almost black grey
+	style->Colors[ImGuiCol_ChildWindowBg] = ImVec4(0.102f, 0.102f, 0.102f, 1.00f); // dark grey
+	style->Colors[ImGuiCol_PopupBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.90f); // black with 90% opacity
+	style->Colors[ImGuiCol_Border] = ImVec4(0.533f, 0.055f, 0.831f, 1.00f); // #880ed4
+	style->Colors[ImGuiCol_BorderShadow] = ImVec4(0.0f, 0.0f, 0.0f, 0.00f); // fully transparent
+	style->Colors[ImGuiCol_FrameBg] = ImVec4(0.102f, 0.102f, 0.102f, 1.000f); // dark grey
+	style->Colors[ImGuiCol_FrameBgHovered] = ImVec4(0.176f, 0.176f, 0.176f, 1.000f); // slightly lighter dark grey
+	style->Colors[ImGuiCol_FrameBgActive] = ImVec4(0.255f, 0.255f, 0.255f, 1.000f); // even lighter dark grey
+	style->Colors[ImGuiCol_TitleBg] = ImVec4(0.102f, 0.102f, 0.102f, 1.000f); // dark grey
+	style->Colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.102f, 0.102f, 0.102f, 1.000f); // dark grey
+	style->Colors[ImGuiCol_TitleBgActive] = ImVec4(0.255f, 0.255f, 0.255f, 1.000f); // even lighter dark grey
+	style->Colors[ImGuiCol_MenuBarBg] = ImVec4(0.102f, 0.102f, 0.102f, 1.000f); // dark grey
+	style->Colors[ImGuiCol_ScrollbarBg] = ImVec4(0.102f, 0.102f, 0.102f, 1.00f); // dark grey
+	style->Colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.533f, 0.055f, 0.831f, 0.31f); // #880ed4 with 31% opacity
+	style->Colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.533f, 0.055f, 0.831f, 0.78f); // #880ed4 with 78% opacity
+
+
 	style->Colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(0.06f, 0.05f, 0.07f, 1.00f);
-	style->Colors[ImGuiCol_CheckMark] = ImColor(87, 119, 134, 255);
-	style->Colors[ImGuiCol_SliderGrab] = ImColor(119, 134, 169, 150);
-	style->Colors[ImGuiCol_SliderGrabActive] = ImColor(119, 134, 169, 150);
-	style->Colors[ImGuiCol_Button] = ImColor(26, 23, 31, 255);
-	style->Colors[ImGuiCol_ButtonHovered] = ImColor(0.102f, 0.090f, 0.122f, 1.000f);
-	style->Colors[ImGuiCol_ButtonActive] = ImColor(0.102f, 0.090f, 0.122f, 1.000f);
-	style->Colors[ImGuiCol_Header] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	style->Colors[ImGuiCol_HeaderHovered] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	style->Colors[ImGuiCol_HeaderActive] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	style->Colors[ImGuiCol_Column] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	style->Colors[ImGuiCol_ColumnHovered] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	style->Colors[ImGuiCol_ColumnActive] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
+	style->Colors[ImGuiCol_CheckMark] = ImColor(136, 14, 212, 255);
+	style->Colors[ImGuiCol_SliderGrab] = ImColor(136, 14, 212, 150);
+	style->Colors[ImGuiCol_SliderGrabActive] = ImColor(136, 14, 212, 150);
+	style->Colors[ImGuiCol_Button] = ImColor(26, 26, 26, 255);
+	style->Colors[ImGuiCol_ButtonHovered] = ImColor(26, 26, 26, 255);
+	style->Colors[ImGuiCol_ButtonActive] = ImColor(26, 26, 26, 255);
+	style->Colors[ImGuiCol_Header] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
+	style->Colors[ImGuiCol_HeaderHovered] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
+	style->Colors[ImGuiCol_HeaderActive] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
+	style->Colors[ImGuiCol_Column] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
+	style->Colors[ImGuiCol_ColumnHovered] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
+	style->Colors[ImGuiCol_ColumnActive] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
 	style->Colors[ImGuiCol_ResizeGrip] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
 	style->Colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
 	style->Colors[ImGuiCol_ResizeGripActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
-	style->Colors[ImGuiCol_PlotLines] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	style->Colors[ImGuiCol_PlotLinesHovered] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	style->Colors[ImGuiCol_PlotHistogram] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	style->Colors[ImGuiCol_PlotHistogramHovered] = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	style->Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.25f, 1.00f, 0.00f, 0.43f);
-	style->Colors[ImGuiCol_ModalWindowDarkening] = ImVec4(1.00f, 0.98f, 0.95f, 0.73f);
+	style->Colors[ImGuiCol_PlotLines] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+	style->Colors[ImGuiCol_PlotLinesHovered] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+	style->Colors[ImGuiCol_PlotHistogram] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+	style->Colors[ImGuiCol_PlotHistogramHovered] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+	style->Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.53f, 0.05f, 0.83f, 0.43f);
+	style->Colors[ImGuiCol_ModalWindowDarkening] = ImVec4(0.101f, 0.098f, 0.098f, 0.73f);
+
 
 	style->WindowTitleAlign.x = 0.50f;
 	style->FrameRounding = 0.0f;
@@ -349,6 +352,8 @@ void Render::Menu() {
 
 			ImGui::SliderFloat("Smooth", &Smooth, 2, 15);
 			ImGui::SliderInt("Fov Size", &FovSize, 50, 600);
+
+
 
 			
 			

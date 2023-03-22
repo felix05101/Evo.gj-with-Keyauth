@@ -10,3 +10,6 @@ inline int FovSize = 200;
 inline float Smooth = 4;
 inline bool bAimbot = true;
 inline bool bIsTargeting = false;
+inline bool drawCircleEnabled = false;
+
+
