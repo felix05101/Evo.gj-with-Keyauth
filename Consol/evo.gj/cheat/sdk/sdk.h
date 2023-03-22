@@ -10,12 +10,12 @@ public:
 };
 
 namespace LocalPtrs {
-	inline uintptr_t Player = 0; //our local pawn (our player)
-	inline uintptr_t Mesh = 0;
-	inline uintptr_t PlayerState = 0;
-	inline uintptr_t RootComponent = 0;
-	inline uintptr_t LocalPlayers = 0;
-	inline uintptr_t PlayerController = 0;
-	inline uintptr_t Gworld = 0; //uworld != gworld u little fuckers
+	inline uintptr_t Player = 0x38; //our local pawn (our player)
+	inline uintptr_t Mesh = 0x310;
+	inline uintptr_t PlayerState = 0x2a8;
+	inline uintptr_t RootComponent = 0x190;
+	inline uintptr_t LocalPlayers = 0x38;
+	inline uintptr_t PlayerController = 0x30;
+	inline uintptr_t Gworld = 0xec6b150; //uworld != gworld u little fuckers
 }
 inline Camera vCamera;

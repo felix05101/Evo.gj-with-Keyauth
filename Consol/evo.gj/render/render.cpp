@@ -300,9 +300,7 @@ void Render::Menu() {
 	if (GetAsyncKeyState(VK_INSERT) & 1) bMenu = !bMenu;
 	if (bMenu)
 	{
-		static POINT Mouse;
-		GetCursorPos(&Mouse);
-		ImGui::GetOverlayDrawList()->AddCircleFilled(ImVec2(Mouse.x, Mouse.y), float(4), ImColor(255,0,0), 50);
+
 
 		ImGui::SetNextWindowSize({ 620.f,350.f });
 
@@ -373,6 +371,16 @@ void Render::Menu() {
 			ImGui::BeginChild("##Misc", { 450.f,279.f }, true);
 			ImGui::SetCursorPos({ 19.f,14.f });
 			ImGui::Checkbox("Crosshair", &bCrosshair);
+
+
+
+
+
+
+
+
+
+
 
 		}
 		ImGui::EndChild();
