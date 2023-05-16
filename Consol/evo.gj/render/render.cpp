@@ -307,7 +307,7 @@ void Render::Menu() {
 
 		ImGui::SetNextWindowSize({ 620.f,350.f });
 
-		ImGui::Begin("Quantom-Pro", 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar);
+		ImGui::Begin("Your-Skidded-Cheat-Name", 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar);
 		ImGui::SetCursorPos({ 36.f,31.f });
 		ImGui::SetCursorPos({ 22.f,56.f });
 		if (ImGui::Button("Aimbot", { 89.f, 32.f }))
