@@ -29,7 +29,7 @@ const std::string compilation_time = (std::string)skCrypt(__TIME__);
 using namespace KeyAuth;
 
 std::string name = ""; // application name. right above the blurred text aka the secret on the licenses tab among other tabs
-std::string ownerid = "7MXJE4V6xa"; // ownerid, found in account settings. click your profile picture on top right of dashboard and then account settings.
+std::string ownerid = ""; // ownerid, found in account settings. click your profile picture on top right of dashboard and then account settings.
 std::string secret = ""; // app secret, the blurred text on licenses tab and other tabs
 std::string version = ""; // leave alone unless you've changed version on website; // leave alone unless you've changed version on website
 std::string url = skCrypt("").decrypt(); // change if you're self-hosting
